@@ -4,27 +4,10 @@
 
 import sys
 
+#Variable que recolle o último máximo e un dicionario vacío onde meteremos todos os valores
 
-
-salesTotal = 0
 prevMax = 0
-
-oldKey = None
-
 dicto = {}
-
-
-# Loop around the data
-
-# It will be in the format key\tval
-
-# Where key is the store name, val is the sale amount
-
-#
-
-# All the sales for a particular store will be presented,
-
-# then the key will change and we'll be dealing with the next store
 
 
 
@@ -43,10 +26,8 @@ for line in sys.stdin:
     thisKey, thisSale = data_mapped
 
 
-
-    # Escribe un par key:value ante un cambio na key
-
-    # Reinicia o total
+    #Se a chave non existe no dicionario, engadímosela. Se existe, comprobamos o valor
+    #antigo co novo, e en caso de que o supere a actualizamos
 
     if thisKey not in dicto:
 
@@ -57,13 +38,11 @@ for line in sys.stdin:
         if float(prevMax) < float(thisSale):
            dicto.update({'{}'.format(thisKey) : float(thisSale)})
 
-
-
     oldKey = thisKey
 
 
 
-# Escribe o último par, unha vez rematado o bucle
+# Imprimimos o par chave : valor máximo
 
 for i in dicto:
 

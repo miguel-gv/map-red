@@ -2,7 +2,7 @@
 
 import sys
 
-
+#Collemos Item e Cost para o reducer
 
 for line in sys.stdin:
 

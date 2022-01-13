@@ -1,23 +1,10 @@
+
+#A variable prevSales sirve para recoller o valor da chave en caso de que exista anteriormente
+#O dicionario sirve como hub de todas as relacións chave-valor
+import sys;
+
 prevSales = 0
-
-oldKey = None
-
 dicto = {}
-print(type(dicto))
-
-
-
-# Loop around the data
-
-# It will be in the format key\tval
-
-# Where key is the store name, val is the sale amount
-
-#
-
-# All the sales for a particular store will be presented,
-
-# then the key will change and we'll be dealing with the next store
 
 
 
@@ -36,18 +23,13 @@ for line in sys.stdin:
 
     thisKey, thisSale = data_mapped
 
-
-
-    # Escribe un par key:value ante un cambio na key
-
-    # Reinicia o total
+    #Se a key non existe, a crea no dicionario
 
     if thisKey not in dicto:
 
-        dicto[thisKey] = thisSale  # creo que sobra esta liña
+        dicto[thisKey] = thisSale 
 
-
-
+    #Se a key existe, añádelle o valor das nova venda ao contador anterior
     else:
 
         prevSales = dicto.get(thisKey)

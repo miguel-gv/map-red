@@ -17,21 +17,12 @@ oldKey = None
 
 for line in sys.stdin:
 
-
-    
-
     thisSale = float(line)
 
-
+    #Co comprobador do anterior máximo, comprobamos liña por liña e o actualizamos se a nova liña é maior
+    
     if thisSale > saleMax:
        saleMax = thisSale
-
-    # Escribe un par key:value ante un cambio na key
-
-    # Reinicia o total
-
-    
-
 
 
 print('A venda máxima é de {}'.format(saleMax))
